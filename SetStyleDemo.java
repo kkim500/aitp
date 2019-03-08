@@ -39,6 +39,13 @@ public class SetStyleDemo extends Application {
 
         btnApply.setOnAction(($) ->{
 
+        //instead of CSS setStyle(), you can call a corresponding API method
+        //here:  btnApply.setStyle()
+        //this is the fastest way in performance-wise to apply a style
+        //from java code because javafx doesn't need to spend additional
+        //time to parse CSS and style text and then apply the result
+        //using API calls.     
+            
         btnApply.setStyle(
                 "-fx-font-size: " + fontSize.getText() + ";"
                         + "-fx-min-width: " + width.getText() + ";"
